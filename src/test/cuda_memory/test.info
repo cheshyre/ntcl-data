@@ -1,0 +1,1 @@
+regular_tests = cuda_storage cuda_pinned_storage host_cuda_manager

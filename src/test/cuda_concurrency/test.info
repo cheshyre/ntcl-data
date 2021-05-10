@@ -1,0 +1,1 @@
+regular_tests = event_handler_cuda stream_handler_cuda dependency_manager_cuda

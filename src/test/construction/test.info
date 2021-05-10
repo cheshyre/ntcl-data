@@ -1,0 +1,1 @@
+regular_tests = storage_builder_factory storage_builder storage_builder_interface

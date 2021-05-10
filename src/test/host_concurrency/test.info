@@ -1,0 +1,1 @@
+regular_tests = event_handler_host stream_handler_host dependency_manager_host

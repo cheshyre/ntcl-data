@@ -1,0 +1,1 @@
+regular_tests = ring_array_descriptor contiguous_ring_array_descriptor ring_buffer slot_manager checkpoint_manager scratch_buffer

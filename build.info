@@ -1,0 +1,9 @@
+library_name = ntcl-data
+modules = concurrency concurrency_api memory memory_api host_concurrency host_memory converter scratch_buffer construction helpers
+plugins = cuda_base cuda_concurrency cuda_memory cuda_plugin hip_base hip_concurrency hip_memory
+use_cuda = cuda_base cuda_concurrency cuda_memory cuda_plugin
+use_cuda:dependencies = cuda
+use_hip = hip_base hip_concurrency hip_memory
+api = api
+uses = ntcl-util
+tests = serial

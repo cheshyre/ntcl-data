@@ -1,0 +1,1 @@
+regular_tests = fortran_host_converter fortran_data_converter
