@@ -1,1 +1,1 @@
-regular_tests = hip_storage hip_pinned_storage hip_builder hip_pinned_builder host_hip_manager
+regular_tests = hip_storage hip_pinned_storage host_hip_manager

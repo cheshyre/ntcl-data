@@ -10,7 +10,8 @@ module dependency_manager_hip_test_module
     use :: stream_module, only : stream
     use :: hip_concurrency_interface, only : &
             hip_query_event, &
-            hip_query_stream
+            hip_query_stream, &
+            hip_stream_synchronize
 
     implicit none
     private
@@ -86,6 +87,7 @@ contains
         s = mgr%get_stream()
         e = mgr%create_dependency(s)
 
+        call mgr%synchronize_on_event(e)
         call assertion%equal("dependency_manager_hip::After one create_dependency on one stream: current event = 1", &
                 mgr%current_event == 1)
 
@@ -112,6 +114,9 @@ contains
 
         call assertion%equal("dependency_manager_hip::After 2 streams and 1 event with dependency: query stream = 0", &
                 hip_query_stream(s%sid) == 0)
+
+        if (hip_stream_synchronize(s2%sid) /= 0 ) &
+                error stop "dependency_manager_hip_test:Stream can't synchronize."
 
         call assertion%equal("dependency_manager_hip::After 2 streams and 1 event with dependency: query stream2 = 0", &
                 hip_query_stream(s2%sid) == 0)

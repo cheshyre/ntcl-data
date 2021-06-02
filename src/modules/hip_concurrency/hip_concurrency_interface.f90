@@ -56,5 +56,15 @@ module hip_concurrency_interface
             import :: c_ptr
             type(c_ptr), value :: event
         end subroutine hip_event_synchronize
+
+        integer(c_int) function hip_stream_synchronize(stream) bind(C, name="hip_stream_synchronize")
+            import :: c_int
+            import :: c_ptr
+            type(c_ptr), value :: stream
+        end function hip_stream_synchronize
+
+        integer(c_int) function hip_device_synchronize() bind(C, name="hip_device_synchronize")
+            import :: c_int
+        end function hip_device_synchronize
     end interface
 end module hip_concurrency_interface

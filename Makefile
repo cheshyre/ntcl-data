@@ -15,8 +15,8 @@ FFLAGS += -Duse_cuda
 endif
 
 ifdef use_hip
-modules      += hip_base hip_concurrency hip_memory
-test_modules += hip_base hip_concurrency hip_memory
+modules      += hip_base hip_concurrency hip_memory hip_plugin
+test_modules += hip_base hip_concurrency hip_memory hip_plugin
 FFLAGS += -Duse_hip
 endif
 
@@ -32,7 +32,17 @@ external_libraries := ${NTCL_ROOT}/ntcl-util/lib/libntcl-util.a
 internal_include_dirs := ${NTCL_ROOT}/ntcl-util/include
 
 ifdef use_cuda
-external_libraries += ${CUDA_LIBS} -lstdc++
+external_libraries += -L${CUDA_ROOT}/lib64 -lcudart -lcuda -lstdc++
+endif
+
+ifdef use_hip
+ifeq (${HIP_PLATFORM},amd)
+external_libraries += -L${HIP_PATH}/lib -lamdhip64 -lstdc++
+endif
+
+ifeq (${HIP_PLATFORM},nvidia)
+external_libraries += -L${CUDA_ROOT}/lib64 -lcudart -lcuda -lstdc++
+endif
 endif
 
 include ${MAKEINC}/standard_defs.mk

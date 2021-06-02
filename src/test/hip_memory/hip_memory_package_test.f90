@@ -6,8 +6,6 @@ module hip_memory_package_test_module
 
     use :: hip_storage_test_module, only : hip_storage_test
     use :: hip_pinned_storage_test_module, only : hip_pinned_storage_test
-    use :: hip_builder_test_module, only : hip_builder_test
-    use :: hip_pinned_builder_test_module, only : hip_pinned_builder_test
     use :: host_hip_manager_test_module, only : host_hip_manager_test
 
     implicit none
@@ -43,8 +41,6 @@ contains
 
         type(hip_storage_test) :: ahip_storage_test
         type(hip_pinned_storage_test) :: ahip_pinned_storage_test
-        type(hip_builder_test) :: ahip_builder_test
-        type(hip_pinned_builder_test) :: ahip_pinned_builder_test
         type(host_hip_manager_test) :: ahost_hip_manager_test
 
         call assertion%equal("hip_memory::Package test complete", .true.)
@@ -61,20 +57,6 @@ contains
             ahip_pinned_storage_test = hip_pinned_storage_test()
             call ahip_pinned_storage_test%run(assertion)
             call ahip_pinned_storage_test%cleanup()
-        end if
-
-        if ( &
-                this%test_selector%is_enabled("hip_builder") ) then
-            ahip_builder_test = hip_builder_test()
-            call ahip_builder_test%run(assertion)
-            call ahip_builder_test%cleanup()
-        end if
-
-        if ( &
-                this%test_selector%is_enabled("hip_pinned_builder") ) then
-            ahip_pinned_builder_test = hip_pinned_builder_test()
-            call ahip_pinned_builder_test%run(assertion)
-            call ahip_pinned_builder_test%cleanup()
         end if
 
         if ( &

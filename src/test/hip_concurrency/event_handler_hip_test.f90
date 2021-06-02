@@ -24,7 +24,7 @@ module event_handler_hip_test_module
         module procedure constructor
     end interface event_handler_hip_test
 contains
-    function constructor(mpi_id) result(this)
+    function constructor() result(this)
         type(event_handler_hip_test) :: this
 
         call this%clear()

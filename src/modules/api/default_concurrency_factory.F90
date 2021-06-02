@@ -27,7 +27,7 @@ module default_concurrency_factory_module
             stream_handler_cuda
 #endif
 
-#ifdef USE_HIP
+#ifdef use_hip
     use :: hip_concurrency_plugin, only : &
             dependency_manager_hip, &
             stream_handler_hip, &
@@ -80,7 +80,7 @@ contains
             handler = stream_handler_cuda()
         case ("pinned")
             handler = stream_handler_cuda()
-#elif USE_HIP
+#elif use_hip
         case ("hip")
             handler = stream_handler_hip()
         case ("device")
@@ -108,7 +108,7 @@ contains
             handler = event_handler_cuda()
         case ("pinned")
             handler = event_handler_cuda()
-#elif USE_HIP
+#elif use_hip
         case ("hip")
             handler = event_handler_hip()
         case ("device")
@@ -143,7 +143,7 @@ contains
             manager = dependency_manager_cuda()
         case ("pinned")
             manager = dependency_manager_cuda()
-#elif USE_HIP
+#elif use_hip
         case ("hip")
             manager = dependency_manager_hip()
         case ("device")

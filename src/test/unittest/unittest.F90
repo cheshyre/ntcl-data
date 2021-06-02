@@ -47,6 +47,8 @@ program unittest
             hip_concurrency_package_test
     use :: hip_memory_package_test_module, only : &
             hip_memory_package_test
+    use :: hip_plugin_package_test_module, only : &
+            hip_plugin_package_test
 #endif
 
     use :: api_package_test_module, only : &
@@ -96,6 +98,8 @@ program unittest
             ahip_concurrency_package_test
     type(hip_memory_package_test) :: &
             ahip_memory_package_test
+    type(hip_plugin_package_test) :: &
+            ahip_plugin_package_test
 #endif
 
     type(api_package_test) :: &
@@ -176,6 +180,10 @@ program unittest
     ahip_memory_package_test = hip_memory_package_test(aselector)
     call ahip_memory_package_test%run(assertion)
     call ahip_memory_package_test%cleanup()
+
+    ahip_plugin_package_test = hip_plugin_package_test(aselector)
+    call ahip_plugin_package_test%run(assertion)
+    call ahip_plugin_package_test%cleanup()
 #endif
 
     aapi_package_test = api_package_test(aselector)

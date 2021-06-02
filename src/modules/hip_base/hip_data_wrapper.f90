@@ -122,12 +122,10 @@ contains
     subroutine check_hip(error, str)
         integer, intent(in) :: error
         character(len=*), intent(in) :: str
-#ifdef DEBUG
             if (error /= hipSuccess) then
                 call hip_error_printer(error)
                 error stop str
             end if
-#endif
     end subroutine check_hip
 
 end module hip_data_wrapper_module

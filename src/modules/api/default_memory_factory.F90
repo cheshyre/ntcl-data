@@ -14,7 +14,7 @@ module default_memory_factory_module
     use :: host_cuda_manager_module, only : host_cuda_manager
 #endif
 
-#ifdef USE_HIP
+#ifdef use_hip
     use :: hip_builder_module, only : hip_builder
     use :: hip_pinned_builder_module, only : hip_pinned_builder
     use :: host_hip_manager_module, only : host_hip_manager
@@ -50,7 +50,7 @@ contains
             allocate(cuda_pinned_builder::builder)
 #endif
 
-#ifdef USE_HIP
+#ifdef use_hip
         case ("device")
             allocate(hip_builder::builder)
         case ("pinned")
@@ -69,7 +69,7 @@ contains
         count_available_memory_types = count_available_memory_types + 2
 #endif
 
-#ifdef USE_HIP
+#ifdef use_hip
         count_available_memory_types = count_available_memory_types + 2
 #endif
     end function count_available_memory_types
@@ -92,7 +92,7 @@ contains
         types(counter) = "pinned"
 #endif
 
-#ifdef USE_HIP
+#ifdef use_hip
         counter = counter + 1
         types(counter) = "device"
         counter = counter + 1
@@ -108,7 +108,7 @@ contains
 
 #if defined use_cuda
         allocate(host_cuda_manager::manager)
-#elif defined USE_HIP
+#elif defined use_hip
         allocate(host_hip_manager::manager)
 #else
         allocate(host_data_manager::manager)

@@ -1,4 +1,6 @@
 module dependency_manager_hip_module
+    use, intrinsic :: iso_c_binding, only : c_associated
+
     use :: dependency_manager_module, only : dependency_manager
     use :: event_module, only : event
     use :: event_handler_hip_module, only : event_handler_hip
@@ -72,7 +74,7 @@ contains
         type(stream), intent(in), optional :: s
 
         if ( present(s) ) then
-            call hip_record_event(e%eid, s%sid)
+            if (c_associated(s%sid)) call hip_record_event(e%eid, s%sid)
         else
             call hip_record_event_without_stream(e%eid)
         end if

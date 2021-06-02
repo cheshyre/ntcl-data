@@ -216,7 +216,7 @@ contains
 
         type(c_ptr) :: dummy
 
-        dummy = memcopy(src%get_data_pointer(), dst%get_data_pointer(), &
+        dummy = memcpy(dst%get_data_pointer(), src%get_data_pointer(), &
                 int(dst%number_of_bytes, c_size_t) )
     end subroutine host2host
 

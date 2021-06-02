@@ -23,7 +23,8 @@ extern "C" hipError_t hip_query_event(hipEvent_t *event)
 
   error = hipEventQuery(*event);
 
-  check_hip_error(error);
+  // Return value is hipErrorNotReady on successful return!
+  // check_hip_error(error); 
 
   return error;
 }
@@ -57,7 +58,8 @@ extern "C" hipError_t hip_query_stream(hipStream_t *stream)
 {
   hipError_t error;
   error = hipStreamQuery(*stream);
-  check_hip_error(error);
+  // Returns hipErrorNotReady (600) on success!
+  //check_hip_error(error);
   return error;
 }
 
@@ -71,6 +73,19 @@ extern "C" void hip_event_synchronize(hipEvent_t *event)
   check_hip_error(hipEventSynchronize(*event));
 }
 
+extern "C" hipError_t hip_stream_synchronize(hipStream_t *stream)
+{
+  hipError_t error = hipStreamSynchronize(*stream);
+  check_hip_error(error);
+  return error;
+}
+
+extern "C" hipError_t hip_device_synchronize(void)
+{
+  hipError_t error = hipDeviceSynchronize();
+  check_hip_error(error);
+  return error;
+}
 extern "C" void hip_synchronize_all(void)
 {
   check_hip_error(hipDeviceSynchronize());
