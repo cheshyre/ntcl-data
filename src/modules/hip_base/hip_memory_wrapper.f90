@@ -10,6 +10,7 @@ module hip_memory_wrapper_module
     public :: hipmallochostwrapper
     public :: hipfreehostwrapper
     public :: hipmemgetinfowrapper
+    public :: hipmemgetinfo
     public :: hipDeviceQuery
     public :: hipSuccess
 
@@ -41,9 +42,15 @@ module hip_memory_wrapper_module
             integer(c_size_t) :: free, total
         end function hipmemgetinfowrapper
 
+        integer(c_int) function hipmemgetinfo(free, total) bind(c, name="hipMemGetInfo")
+            import :: c_int, c_size_t
+            integer(c_size_t) :: free, total
+        end function hipmemgetinfo
+
         integer(c_int) function hipDeviceQuery() bind(c,name="hipDevProp")
             import :: c_int
         end function hipDeviceQuery
+
     end interface
 
     integer(c_int) :: hipSuccess = 0

@@ -188,11 +188,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real64, 1.0_real64))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -216,11 +216,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real64, 1.0_real64))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -244,11 +244,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real64, 1.0_real64))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -272,11 +272,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real64, 1.0_real64))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -300,11 +300,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real64, 1.0_real64))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -355,11 +355,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real32, 1.0_real32))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -383,11 +383,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real32, 1.0_real32))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -411,11 +411,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real32, 1.0_real32))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -439,11 +439,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real32, 1.0_real32))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -467,11 +467,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size((1.0_real32, 1.0_real32))/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(real(second)-real(ptr)) <= real(my_tolerance))
         res = res .and. all(abs(aimag(second)-aimag(ptr)) <= real(my_tolerance))
         call release_pointer_from_remote_storage(ptr, first)
@@ -520,11 +520,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real64_rank1
@@ -547,11 +547,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real64_rank2
@@ -574,11 +574,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real64_rank3
@@ -601,11 +601,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real64_rank4
@@ -628,11 +628,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real64_rank5
@@ -680,11 +680,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real32_rank1
@@ -707,11 +707,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real32_rank2
@@ -734,11 +734,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real32_rank3
@@ -761,11 +761,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real32_rank4
@@ -788,11 +788,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1.0_real32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_real32_rank5
@@ -840,11 +840,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int64_rank1
@@ -867,11 +867,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int64_rank2
@@ -894,11 +894,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int64_rank3
@@ -921,11 +921,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int64_rank4
@@ -948,11 +948,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int64)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int64_rank5
@@ -1000,11 +1000,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int32_rank1
@@ -1027,11 +1027,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int32_rank2
@@ -1054,11 +1054,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int32_rank3
@@ -1081,11 +1081,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int32_rank4
@@ -1108,11 +1108,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int32)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int32_rank5
@@ -1160,11 +1160,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int16)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int16_rank1
@@ -1187,11 +1187,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int16)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int16_rank2
@@ -1214,11 +1214,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int16)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int16_rank3
@@ -1241,11 +1241,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int16)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int16_rank4
@@ -1268,11 +1268,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int16)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int16_rank5
@@ -1320,11 +1320,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int8)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int8_rank1
@@ -1347,11 +1347,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int8)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int8_rank2
@@ -1374,11 +1374,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int8)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int8_rank3
@@ -1401,11 +1401,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int8)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int8_rank4
@@ -1428,11 +1428,11 @@ contains
         if ( present(tolerance) ) my_tolerance = tolerance
 
         number_of_bytes_per_element = storage_size(1_int8)/8
-        number_of_bytes = size(second)*number_of_bytes_per_element
+        number_of_bytes = size(second, kind=int64)*number_of_bytes_per_element
 
         if ( number_of_bytes /= first%number_of_bytes ) return
 
-        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second))
+        call secure_fortran_pointer_from_remote_storage(ptr, first, shape(second, kind=int64))
         res = all(abs(second-ptr) <= my_tolerance)
         call release_pointer_from_remote_storage(ptr, first)
     end function equal_int8_rank5

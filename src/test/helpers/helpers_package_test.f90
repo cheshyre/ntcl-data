@@ -4,6 +4,8 @@ module helpers_package_test_module
             selector, &
             assert
 
+    use :: storage_helper_test_module, only : storage_helper_test
+
     implicit none
     private
 
@@ -35,7 +37,18 @@ contains
         class(helpers_package_test), intent(in) :: this
         type(assert), intent(inout) :: assertion
 
+        type(storage_helper_test) :: astorage_helper_test
+
         call assertion%equal("helpers::Package test complete", .true.)
+
+        ! The following tests will not be run when -long is specified.
+        if ( &
+                this%test_selector%is_enabled("storage_helper") .and. &
+                this%test_selector%is_enabled("long") ) then
+            astorage_helper_test = storage_helper_test()
+            call astorage_helper_test%run(assertion)
+            call astorage_helper_test%cleanup()
+        end if
 
     end subroutine run
 

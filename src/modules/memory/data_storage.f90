@@ -16,6 +16,7 @@ module data_storage_module
         procedure :: get_data_pointer => get_data_pointer
         procedure :: set_data_pointer => set_data_pointer
         procedure :: get_pointer_offset => get_pointer_offset
+        procedure :: query_memory => query_memory
         procedure(allocate_interface), deferred :: allocate_data
         procedure(clear), deferred :: deallocate_data
         procedure :: clear => clear
@@ -53,6 +54,13 @@ contains
         this%is_allocated = .true.
         this%actual_data = ptr
     end subroutine set_data_pointer
+
+    subroutine query_memory(this, unitf)
+        class(data_storage), intent(in) :: this
+        integer, intent(in) :: unitf
+
+        write(unitf, *) "data_storage::query_memory:Not implemented."
+    end subroutine query_memory
 
     subroutine clear(this)
         class(data_storage), intent(inout) :: this

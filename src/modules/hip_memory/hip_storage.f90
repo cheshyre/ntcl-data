@@ -1,8 +1,18 @@
 module hip_storage_module
     use, intrinsic :: iso_fortran_env, only : int64
-    use, intrinsic :: iso_c_binding, only : c_size_t, c_int, c_ptr
-    use :: hip_memory_wrapper_module, only : hipmallocwrapper, hipfreewrapper, hipSuccess
+    use, intrinsic :: iso_c_binding, only : &
+            c_size_t, &
+            c_int, &
+            c_ptr
+
+    use :: hip_memory_wrapper_module, only : &
+            hipmallocwrapper, &
+            hipfreewrapper, &
+            hipSuccess, &
+            hipmemgetinfo
+
     use :: data_storage_module, only : data_storage
+
     implicit none
     private
 
@@ -10,6 +20,7 @@ module hip_storage_module
 
     type, extends(data_storage) :: hip_storage
     contains
+        procedure :: query_memory => query_memory
         procedure :: allocate_data => allocate_data
         procedure :: deallocate_data => deallocate_data
     end type hip_storage
@@ -75,4 +86,16 @@ contains
         end if
         call this%clear()
     end subroutine deallocate_data
+
+    subroutine query_memory(this, unitf)
+        class(hip_storage), intent(in) :: this
+        integer, intent(in) :: unitf
+
+        integer(c_size_t) :: free, total
+        integer :: error
+
+        error = hipmemgetinfo(free, total)
+
+        write(unitf, *) "Free: ", free, ", Total: ", total
+    end subroutine query_memory
 end module hip_storage_module
