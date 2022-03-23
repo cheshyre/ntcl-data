@@ -26,6 +26,7 @@ test_modules += api
 test_modules += unittest
 
 library_name := libntcl-data.a
+library_name_full := libntcl_data_full.a
 
 external_include := 
 external_libraries := ${NTCL_ROOT}/ntcl-util/lib/libntcl-util.a
