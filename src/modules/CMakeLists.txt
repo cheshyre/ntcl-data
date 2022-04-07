@@ -1,3 +1,4 @@
 add_subdirectory(concurrency)
 add_subdirectory(concurrency_api)
 add_subdirectory(memory)
+add_subdirectory(memory_api)
