@@ -1,5 +1,6 @@
 add_subdirectory(concurrency)
 add_subdirectory(concurrency_api)
+add_subdirectory(converter)
 add_subdirectory(host_concurrency)
 add_subdirectory(host_memory)
 add_subdirectory(memory)
