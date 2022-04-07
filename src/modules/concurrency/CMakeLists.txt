@@ -1,0 +1,20 @@
+add_library(
+    ntcl_data_concurrency
+    abstract_concurrency_factory.f90
+    dependency_manager.f90
+    event_handler.f90
+    event.f90
+    stream_handler.f90
+    stream.f90
+)
+add_library(ntcl_data::concurrency ALIAS ntcl_data_concurrency)
+target_include_directories(
+    ntcl_data_concurrency
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_concurrency
+    PRIVATE
+    ntcl_util::api
+)

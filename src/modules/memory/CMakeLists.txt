@@ -1,0 +1,22 @@
+add_library(
+    ntcl_data_memory
+    abstract_memory_factory.f90
+    data_builder.f90
+    data_manager.f90
+    data_storage_wrapper.f90
+    data_storage.f90
+)
+add_library(ntcl_data::memory ALIAS ntcl_data_memory)
+target_include_directories(
+    ntcl_data_memory
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_memory
+    PUBLIC
+    ntcl_util::api
+    ntcl_data_concurrency
+    PRIVATE
+    ntcl_util::interoptability
+)
