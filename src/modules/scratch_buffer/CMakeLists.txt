@@ -1,0 +1,25 @@
+add_library(
+    ntcl_data_scratch_buffer
+    checkpoint_manager.f90
+    contiguous_ring_array_descriptor.f90
+    ring_array_descriptor.f90
+    ring_buffer.f90
+    scratch_buffer_api.f90
+    scratch_buffer_builder.f90
+    scratch_buffer.f90
+    slot_manager.f90
+)
+add_library(ntcl_data::scratch_buffer ALIAS ntcl_data_scratch_buffer)
+target_include_directories(
+    ntcl_data_scratch_buffer
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_scratch_buffer
+    PUBLIC
+    ntcl_util::api
+    ntcl_data_concurrency_api
+    ntcl_data_memory_api
+    ntcl_data_memory
+)

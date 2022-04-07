@@ -1,0 +1,20 @@
+add_library(
+    ntcl_data_converter
+    fortran_converter_factory.f90
+    fortran_data_converter.f90
+    fortran_host_converter.f90
+)
+add_library(ntcl_data::converter ALIAS ntcl_data_converter)
+target_include_directories(
+    ntcl_data_converter
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_converter
+    PUBLIC
+    ntcl_util::api
+    ntcl_data_memory_api
+    ntcl_data_concurrency_api
+    ntcl_data_host_memory
+)

@@ -1,0 +1,22 @@
+add_library(
+    ntcl_data_construction
+    storage_builder_factory.f90
+    storage_builder_interface.f90
+    storage_builder.f90
+    storage_construction_api.f90
+)
+add_library(ntcl_data::construction ALIAS ntcl_data_construction)
+target_include_directories(
+    ntcl_data_construction
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_construction
+    PUBLIC
+    ntcl_util::api
+    ntcl_data_memory_api
+    ntcl_data_memory_concurrency_api
+    ntcl_data_converter
+    ntcl_data_scratch_buffer
+)

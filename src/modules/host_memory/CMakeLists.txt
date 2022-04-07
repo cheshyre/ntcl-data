@@ -1,0 +1,22 @@
+add_library(
+    ntcl_data_host_memory
+    host_builder.f90
+    host_data_manager.f90
+    host_memory_plugin.f90
+    host_storage.f90
+    intrinsic_pointer_builder.f90
+)
+add_library(ntcl_data::host_memory ALIAS ntcl_data_host_memory)
+target_include_directories(
+    ntcl_data_host_memory
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_host_memory
+    PUBLIC
+    ntcl_util::api
+    ntcl_data_concurrency
+    ntcl_data_memory
+    ntcl_data_memory_api
+)

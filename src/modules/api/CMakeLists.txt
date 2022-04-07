@@ -1,0 +1,30 @@
+add_library(
+    ntcl_data_api
+    data_api.f90
+    data_dev.f90
+    data_initializer.f90
+    default_memory_factory.F90
+    default_concurrency_factory.F90
+)
+add_library(ntcl_data::api ALIAS ntcl_data_api)
+target_include_directories(
+    ntcl_data_api
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_api
+    PUBLIC
+    ntcl_util::api
+    ntcl_util::string
+    ntcl_data_concurrency
+    ntcl_data_concurrency_api
+    ntcl_data_construction
+    ntcl_data_converter
+    ntcl_data_helpers
+    ntcl_data_memory
+    ntcl_data_memory_api
+    ntcl_data_host_concurrency
+    ntcl_data_host_memory
+    ntcl_data_scratch_buffer
+)
