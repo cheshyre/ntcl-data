@@ -16,7 +16,7 @@ target_link_libraries(
     PUBLIC
     ntcl_util::api
     ntcl_data_memory_api
-    ntcl_data_memory_concurrency_api
+    ntcl_data_concurrency_api
     ntcl_data_converter
     ntcl_data_scratch_buffer
 )
