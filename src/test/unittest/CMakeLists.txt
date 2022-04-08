@@ -1,0 +1,21 @@
+add_executable(
+    ntcl_data_unittest
+    unittest.F90
+)
+target_link_libraries(
+    ntcl_data_unittest
+    PUBLIC
+    ntcl_util::api
+    ntcl_data_api
+    ntcl_data_concurrency_test
+    ntcl_data_concurrency_api_test
+    ntcl_data_memory_test
+    ntcl_data_memory_api_test
+    ntcl_data_host_concurrency_test
+    ntcl_data_host_memory_test
+    ntcl_data_converter_test
+    ntcl_data_scratch_buffer_test
+    ntcl_data_construction_test
+    ntcl_data_helpers_test
+    ntcl_data_api_test
+)

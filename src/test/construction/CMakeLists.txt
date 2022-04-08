@@ -1,0 +1,21 @@
+add_library(
+    ntcl_data_construction_test
+    construction_package_test.f90
+    storage_builder_factory_test.f90
+    storage_builder_interface_test.f90
+    storage_builder_test_helper.f90
+    storage_builder_test.f90
+)
+add_library(ntcl_util::construction_test ALIAS ntcl_data_construction_test)
+target_include_directories(
+    ntcl_data_construction_test
+    PUBLIC
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
+target_link_libraries(
+    ntcl_data_construction_test
+    PUBLIC
+    ntcl_util::api
+    ntcl_data_api
+    ntcl_data_construction
+)
